@@ -26,7 +26,7 @@ img {
 section {
     padding: 96px 0;
 }
-button {
+.btn {
     color: $white;
     background-color: $primary;
     border: none;
@@ -53,12 +53,42 @@ button {
     }
 }
 
+.btn-wider{
+    width: 180px;
+}
+
+.btn-cross{
+    position: absolute;
+    right: 46px;
+    top: 46px;
+    width: 12px;
+    height: 12px;
+    cursor: pointer;
+    &:before, &:after {
+        position: absolute;
+        left: 5px;
+        content: ' ';
+        height: 15px;
+        width: 2px;
+        background-color: #000;
+        border-radius: 2px;
+      }
+      &:before {
+        transform: rotate(45deg);
+      }
+      &:after {
+        transform: rotate(-45deg);
+      }
+}
+
 .container {
     max-width: 1440px;
     margin: 0 auto;
     padding: 0 30px;
 }
-
+// **********************************
+// *********** MAIN-SECTION *********
+// **********************************
 .box {
     max-width: 980px;
     margin: 0 auto;
@@ -74,4 +104,38 @@ button {
         width: 100%;
         padding-left: 20px;
     }
+}
+
+// **********************************
+// *********** POPUP ****************
+// **********************************
+#overlay {
+    display: none;
+    width: 100%;
+    height: 100%;
+    background: rgb(18 18 18 / 50%);
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 0;
+
+    &.show{
+        display: block;
+    }
+}
+#popup{
+    display: none;
+}
+
+.popup-content{
+    background-color: $white;
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 56px 95px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    z-index: 3;
 }

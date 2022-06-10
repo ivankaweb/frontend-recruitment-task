@@ -18,10 +18,21 @@
                 <div class="box-desc">
                     <h1>Lorem Ipsum</h1>
                     <p>Infinitely scalable, feature-rich and cloud-native data management and protection for modern and legacy infrastructures and SaaS platforms, managed via a single app with no hardware required.</p>
-                    <button type="button">Button</button>
+                    <button type="button" class="btn" id="btn-show">Button</button>
                 </div>
             </div>
         </section>
-    </div>
 
+        <div id="popup">
+            <div class="popup-content">
+                <h1>Alert!</h1>
+                <p>You have clicked <b>X times: <span id="counts">0</span></b> to related button.</p>
+                <button class="btn btn-wider" id="btn-reset" style="display: none;">Reset counter</button>
+                <a id="btn-close" class="btn-cross"></a>
+            </div>
+        </div>
+        <div id="overlay"></div>
+    </div>
+    <script src="dist/all.js"></script>
+    
 </body>
