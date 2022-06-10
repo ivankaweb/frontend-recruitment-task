@@ -53,32 +53,33 @@ section {
     }
 }
 
-.btn-wider{
+.btn-wider {
     width: 180px;
 }
 
-.btn-cross{
+.btn-cross {
     position: absolute;
     right: 46px;
     top: 46px;
     width: 12px;
     height: 12px;
     cursor: pointer;
-    &:before, &:after {
+    &:before,
+    &:after {
         position: absolute;
         left: 5px;
-        content: ' ';
+        content: " ";
         height: 15px;
         width: 2px;
         background-color: #000;
         border-radius: 2px;
-      }
-      &:before {
+    }
+    &:before {
         transform: rotate(45deg);
-      }
-      &:after {
+    }
+    &:after {
         transform: rotate(-45deg);
-      }
+    }
 }
 
 .container {
@@ -119,23 +120,106 @@ section {
     top: 0;
     z-index: 0;
 
-    &.show{
+    &.show {
         display: block;
     }
 }
-#popup{
+#popup {
     display: none;
 }
 
-.popup-content{
+.popup-content {
     background-color: $white;
-    max-width: 920px;
+    max-width: 730px;
     margin: 0 auto;
     padding: 56px 95px;
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 50%;
+    width: 70%;
     z-index: 3;
+}
+
+// **********************************
+// *********** MEDIA ****************
+// **********************************
+
+@media (max-width: 1024px) {
+    h1 {
+        font-size: 36px;
+        margin-bottom: 18px;
+    }
+    section {
+        padding: 48px 0;
+    }
+    .popup-content {
+        padding: 30px 55px;
+    }
+    .btn-cross {
+        height: 18px;
+        right: 30px;
+        top: 30px;
+        width: 18px;
+        &:after,
+        &:before {
+            height: 18px;
+            left: 7px;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+    h1 {
+        font-size: 24px;
+        margin-bottom: 18px;
+    }
+    p {
+        line-height: 20px;
+        margin: 10px 0;
+    }
+    .btn {
+        line-height: 40px;
+        margin-top: 10px;
+        max-width: 119px;
+        font-size: 14px;
+    }
+    .btn-wider {
+        width: 140px;
+    }
+    .popup-content {
+        padding: 45px;
+    }
+}
+@media (max-width: 600px) {
+    .box {
+        flex-wrap: wrap;
+        &-img,
+        &-desc {
+            max-width: 100%;
+        }
+        &-desc {
+            padding: 0;
+            margin-top: 20px;
+        }
+    }
+}
+@media (max-width: 480px) {
+    section {
+        padding: 24px 0;
+    }
+    .container {
+        padding: 0 10px;
+    }
+
+    .btn-cross {
+        right: 20px;
+        top: 20px;
+    }
+    .popup-content {
+        padding: 20px;
+    }
 }
